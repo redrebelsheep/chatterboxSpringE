@@ -4,7 +4,6 @@ package f73.bredex.chatterbox.chat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -17,7 +16,7 @@ public class ChatController {
 
     @GetMapping("/rooms")
     public List<String> getRooms(){
-        return chatService.findALlRooms();
+        return chatService.getALlRooms();
     }
 
 }
