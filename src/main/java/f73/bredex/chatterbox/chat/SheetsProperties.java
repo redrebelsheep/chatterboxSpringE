@@ -2,7 +2,7 @@ package f73.bredex.chatterbox.chat;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties("datastax.astra")
+@ConfigurationProperties("google.sheets.rooms")
 public class SheetsProperties {
 
     private String spreadsheetId;
