@@ -1,9 +1,9 @@
-package f73.bredex.chatterbox.chat;
+package f73.bredex.chatterbox.chat.google;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties("google.sheets.rooms")
-public class SheetsProperties {
+public class GoogleSheetsProperties {
 
     private String spreadsheetId;
     private String range;

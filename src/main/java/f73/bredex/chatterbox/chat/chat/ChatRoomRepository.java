@@ -1,14 +1,9 @@
-package f73.bredex.chatterbox.chat;
+package f73.bredex.chatterbox.chat.chat;
 
 
-import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
-import com.google.api.client.googleapis.services.CommonGoogleClientRequestInitializer;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.Lists;
-import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.model.ValueRange;
+import f73.bredex.chatterbox.chat.google.GoogleSheetsConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +15,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class RoomRepository {
+public class ChatRoomRepository {
 
-    private final Logger logger = LoggerFactory.getLogger(RoomRepository.class);
+    private final Logger logger = LoggerFactory.getLogger(ChatRoomRepository.class);
 
     @Autowired
     private GoogleSheetsConfig configurationData;

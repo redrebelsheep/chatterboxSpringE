@@ -1,5 +1,4 @@
-package f73.bredex.chatterbox.chat;
-import org.springframework.beans.factory.annotation.Autowired;
+package f73.bredex.chatterbox.chat.chat;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -8,17 +7,17 @@ import java.util.List;
 @Service
 public class ChatService {
 
-    private final RoomRepository roomRepository;
+    private final ChatRoomRepository chatRoomRepository;
 
     private final ChatRepository chatRepository;
 
-    public ChatService(RoomRepository roomRepository, ChatRepository chatRepository) {
-        this.roomRepository = roomRepository;
+    public ChatService(ChatRoomRepository chatRoomRepository, ChatRepository chatRepository) {
+        this.chatRoomRepository = chatRoomRepository;
         this.chatRepository = chatRepository;
     }
 
     public List<String> getALlRooms() {
-        return roomRepository.findALlRooms();
+        return chatRoomRepository.findALlRooms();
     }
 
     public Chat postChat(String room, String message, String sender) {

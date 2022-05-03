@@ -1,4 +1,4 @@
-package f73.bredex.chatterbox.chat;
+package f73.bredex.chatterbox.chat.chat;
 
 
 import org.springframework.http.HttpStatus;

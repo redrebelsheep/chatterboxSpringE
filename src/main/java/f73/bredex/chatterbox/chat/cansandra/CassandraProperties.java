@@ -1,4 +1,4 @@
-package f73.bredex.chatterbox.chat;
+package f73.bredex.chatterbox.chat.cansandra;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
