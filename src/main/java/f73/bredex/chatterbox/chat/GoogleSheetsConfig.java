@@ -17,8 +17,11 @@ import java.security.GeneralSecurityException;
 @EnableConfigurationProperties(SheetsProperties.class)
 public class GoogleSheetsConfig {
 
-    @Autowired
     private SheetsProperties sheetsProperties;
+
+    public GoogleSheetsConfig(SheetsProperties sheetsProperties) {
+        this.sheetsProperties = sheetsProperties;
+    }
 
     public Sheets getConnectionsGoogleSheets() throws GeneralSecurityException, IOException {
         NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();

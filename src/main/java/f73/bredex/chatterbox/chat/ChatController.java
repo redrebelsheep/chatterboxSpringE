@@ -4,6 +4,7 @@ package f73.bredex.chatterbox.chat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,4 +33,6 @@ public class ChatController {
         return null;
     }
 
+    @PostMapping("/rooms/{rooms}/message")
+    public ResponseEntity<Chat> postChat(@PathVariable )
 }
