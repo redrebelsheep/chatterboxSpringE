@@ -18,9 +18,9 @@ public class Chat {
     @PrimaryKeyColumn(ordinal = 1, type = PrimaryKeyType.CLUSTERED, ordering = Ordering.ASCENDING)
     private Instant posted;
     @PrimaryKeyColumn(ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-    private Room room;
+    private String room;
 
-    public Chat(String message, String sender, Instant posted, Room room) {
+    public Chat(String message, String sender, Instant posted, String room) {
         this.message = message;
         this.sender = sender;
         this.posted = posted;
@@ -39,7 +39,7 @@ public class Chat {
         return posted;
     }
 
-    public Room getRoom() {
+    public String getRoom() {
         return room;
     }
 }

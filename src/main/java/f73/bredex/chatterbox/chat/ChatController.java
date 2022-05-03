@@ -3,10 +3,7 @@ package f73.bredex.chatterbox.chat;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,11 +25,13 @@ public class ChatController {
         return new ResponseEntity<HttpStatus>(HttpStatus.CREATED);
     }
 
-    @GetMapping("/rooms/messages")
-    public <T> List<T> getMessages(String room){
-        return null;
+    @GetMapping("/rooms/{room}/messages")
+    public List<Chat> getMessages(@PathVariable String room){
+        return chatService.getChats(room);
     }
 
-    @PostMapping("/rooms/{rooms}/message")
-    public ResponseEntity<Chat> postChat(@PathVariable )
+    @PostMapping("/rooms/{room}/message")
+    public Chat postChat(@PathVariable String room, @RequestBody String message, @RequestParam String sender){
+        return chatService.postChat(room, message, sender);
+    }
 }

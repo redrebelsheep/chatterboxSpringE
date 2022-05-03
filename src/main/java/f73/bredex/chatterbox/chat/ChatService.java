@@ -1,7 +1,7 @@
 package f73.bredex.chatterbox.chat;
-
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -20,9 +20,15 @@ public class ChatService {
         return roomRepository.findALlRooms();
     }
 
-    public Chat postChat(Chat chat) {
-        return chatRepository.save(chat);
+
+
+    public Chat postChat(String room, String message, String sender) {
+        Chat chatTmp = new Chat(message,sender, Instant.now(),room);
+        return chatRepository.save(chatTmp);
     }
 
+    public List<Chat> getChats(String room){
+        return chatRepository.findByRoom(room);
+    }
 
 }
