@@ -7,10 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import static java.lang.annotation.ElementType.PARAMETER;
 
-@Constraint(validatedBy = ChatValidator.class)
+@Constraint(validatedBy = RoomValidator.class)
 @Target(PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
-public interface ValidChat{
+public @interface ValidRoom {
 
     String message() default "Diesen Raum gibt es nicht.";
 

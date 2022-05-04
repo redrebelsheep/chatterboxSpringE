@@ -3,11 +3,13 @@ package f73.bredex.chatterbox.chat.chat;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@Validated
 public class ChatController {
     ChatService chatService;
 
@@ -21,12 +23,12 @@ public class ChatController {
     }
 
     @PostMapping("/rooms/{rooms}")
-    public ResponseEntity<HttpStatus> postRoom(String room){
+    public ResponseEntity<HttpStatus> postRoom(@ValidRoom String room){
         return new ResponseEntity<HttpStatus>(HttpStatus.CREATED);
     }
 
     @GetMapping("/rooms/{room}/messages")
-    public List<Chat> getMessages(@PathVariable String room){
+    public List<Chat> getMessages(@PathVariable @ValidRoom String room){
         return chatService.getChats(room);
     }
 

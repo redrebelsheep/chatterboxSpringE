@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class ChatRoomRepository {
+public class RoomRepository {
 
-    private final Logger logger = LoggerFactory.getLogger(ChatRoomRepository.class);
+    private final Logger logger = LoggerFactory.getLogger(RoomRepository.class);
 
     @Autowired
     private GoogleSheetsConfig configurationData;

@@ -7,11 +7,11 @@ import java.util.List;
 @Service
 public class ChatService {
 
-    private final ChatRoomRepository chatRoomRepository;
+    private final RoomRepository chatRoomRepository;
 
     private final ChatRepository chatRepository;
 
-    public ChatService(ChatRoomRepository chatRoomRepository, ChatRepository chatRepository) {
+    public ChatService(RoomRepository chatRoomRepository, ChatRepository chatRepository) {
         this.chatRoomRepository = chatRoomRepository;
         this.chatRepository = chatRepository;
     }
