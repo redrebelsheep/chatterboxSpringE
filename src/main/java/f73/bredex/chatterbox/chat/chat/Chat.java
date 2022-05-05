@@ -27,6 +27,10 @@ public class Chat {
         this.room = room;
     }
 
+
+    public Chat() {
+    }
+
     public String getMessage() {
         return message;
     }

@@ -25,20 +25,22 @@ public class ChatController {
         return chatService.getALlRooms();
     }
 
-    @PostMapping("/rooms/{rooms}")
-    public ResponseEntity<HttpStatus> postRoom(@ValidRoom String room){
-        return new ResponseEntity<HttpStatus>(HttpStatus.CREATED);
+    @PostMapping("/rooms/{room}")
+    public Chat postChat(@PathVariable String room, @RequestBody String message, @RequestParam String sender){
+        return chatService.postChat(room, message, sender);
     }
+//    @PostMapping("/rooms/{rooms}")
+//    public ResponseEntity<HttpStatus> postRoom(@ValidRoom String room){
+//        return new ResponseEntity<HttpStatus>(HttpStatus.CREATED);
+
+//    }
 
     @GetMapping("/rooms/{room}/messages")
     public List<Chat> getMessages(@PathVariable @ValidRoom String room){
         return chatService.getChats(room);
     }
 
-    @PostMapping("/rooms/{room}/message")
-    public Chat postChat(@PathVariable String room, @RequestBody String message, @RequestParam String sender){
-        return chatService.postChat(room, message, sender);
-    }
+
 
     @ResponseStatus(BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
